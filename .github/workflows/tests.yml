@@ -34,7 +34,7 @@ jobs:
 
     - name: Build Duplicati (Windows)
       if: matrix.os == 'windows-latest' 
-      run: msbuild make -p:Configuration=Release Duplicati.sln #.\Installer\Windows\build-msi.bat /t:Build /p:RunOctoPack=true
+      run: msbuild -p:Configuration=Release Duplicati.sln #.\Installer\Windows\build-msi.bat /t:Build /p:RunOctoPack=true
       #.\Installer\Windows\build-msi.bat --- /p:OutputPath=./.github/workflows --- -p:Configuration=Release   
       
 
