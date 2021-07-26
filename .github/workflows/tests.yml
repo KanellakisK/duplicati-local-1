@@ -3,7 +3,7 @@ name: Tests
 on: [push, pull_request]
 
 env:
-  build_directory: "Duplicati"  #"Installer/Windows"
+  build_directory: "Duplicati/GUI/Duplicati.GUI.TrayIcon/bin/Release"  #"Installer/Windows"
 
 jobs:
   unit_tests:
