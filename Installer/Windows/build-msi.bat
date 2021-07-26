@@ -103,8 +103,8 @@ IF EXIST "..\..\..\oem-update-installid.txt" (
 	xcopy ..\..\..\oem-update-installid.txt Duplicati /e /s /y /i
 )
 
-rem rmdir /s /q obj
-rem rmdir /s /q bin
+rmdir /s /q obj
+rmdir /s /q bin
 
 copy UpgradeData.wxi UpgradeData.wxi.orig
 UpdateVersion.exe Duplicati\Duplicati.GUI.TrayIcon.exe UpgradeData.wxi
