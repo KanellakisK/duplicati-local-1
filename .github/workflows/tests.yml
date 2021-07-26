@@ -3,7 +3,7 @@ name: Tests
 on: [push, pull_request]
 
 env:
-  build_directory: "Duplicati/GUI/Duplicati.GUI.TrayIcon/bin/Release"  #"Installer/Windows"
+  build_directory: "Duplicati/GUI" #/Duplicati.GUI.TrayIcon/bin/Release"  #"Installer/Windows"
 
 jobs:
   unit_tests:
@@ -34,7 +34,7 @@ jobs:
 
     - name: Build Duplicati (Windows)
       if: matrix.os == 'windows-latest' 
-      run: msbuild -p:Configuration=Release Duplicati.sln /p:OutDirPath=.\.github #.\Installer\Windows\build-msi.bat 
+      run: msbuild -p:Configuration=Release Duplicati.sln /p:OutDirPath=Duplicati/GUI #.\Installer\Windows\build-msi.bat 
       #.\Installer\Windows\build-msi.bat --- /p:OutputPath=./.github/workflows --- -p:Configuration=Release   
       
 
