@@ -32,23 +32,10 @@ jobs:
   #    if: matrix.os == 'ubuntu-latest'
   #    run: sudo apt-get install gtk-sharp2
   
-  
-  
-   
-    - name: Setup .NET Core
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: 3.1.101
- 
-    - name: Install dependencies
-      run: dotnet restore Duplicati.sln
-      
-    - name: Build
-      run: dotnet build Duplicati.sln --configuration Release 
-      
-   # - name: Build Duplicati (Windows)
-   #   if: matrix.os == 'windows-latest' 
-   #   run: msbuild -p:Configuration=Release .\Installer\Windows\build-msi.bat /p:OutDirPath=Duplicati/GUI #.\Installer\Windows\build-msi.bat 
+
+    - name: Build Duplicati (Windows)
+      if: matrix.os == 'windows-latest' 
+      run: msbuild -p:Configuration=Release Duplicati.sln /p:OutDirPath=Duplicati/GUI #.\Installer\Windows\build-msi.bat 
       # --- /p:OutputPath=./.github/workflows --- -p:Configuration=Release   
       
 
