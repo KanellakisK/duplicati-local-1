@@ -1,8 +1,8 @@
 @echo off
 
 rmdir /s /q Duplicati
-del /q Duplicati.msi
-del /q Duplicati-32bit.msi
+rem del /q Duplicati.msi
+rem del /q Duplicati-32bit.msi
 
 IF NOT EXIST "%1" (
 	echo File not found, please supply a zip file with the build as the first argument
@@ -11,7 +11,7 @@ IF NOT EXIST "%1" (
 
 call "%VS140COMNTOOLS%vsvars32.bat"
 
-rem 7z x -oDuplicati %1
+ 7z x -oDuplicati %1
 
 IF EXIST "..\oem" (
 	echo Installing OEM files
