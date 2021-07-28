@@ -118,8 +118,8 @@ rem move bin\x64\Release\Duplicati.msi Duplicati.msi
 msbuild /property:Configuration=Release /property:Platform=x86
 rem move bin\x86\Release\Duplicati.msi Duplicati-32bit.msi
 
-copy UpgradeData.wxi.orig UpgradeData.wxi
-del UpgradeData.wxi.orig
+rem copy UpgradeData.wxi.orig UpgradeData.wxi
+rem del UpgradeData.wxi.orig
 
 rmdir /s /q Duplicati
 
