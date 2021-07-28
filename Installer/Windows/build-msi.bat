@@ -1,10 +1,8 @@
 @echo off
 
-rem ta del einai sxolio giati den exoyn dhmiourgithei ta arxeia kai de mporei na ta diagrapsei
-
 rmdir /s /q Duplicati
-rem del /q Duplicati.msi
-rem del /q Duplicati-32bit.msi
+del /q Duplicati.msi
+del /q Duplicati-32bit.msi
 
 IF NOT EXIST "%1" (
 	echo File not found, please supply a zip file with the build as the first argument
