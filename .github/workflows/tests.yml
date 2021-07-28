@@ -34,7 +34,7 @@ jobs:
   
     - name: Build Duplicati (Windows)
       if: matrix.os == 'windows-latest' 
-      run: msbuild -p:Configuration=Release WixInstaller.sln  #.\Installer\Windows\build-msi.bat  /p:OutDirPath=Duplicati/GUI
+      run: msbuild -p:Configuration=Release Installer/WindowsWixInstaller.sln  #.\Installer\Windows\build-msi.bat  /p:OutDirPath=Duplicati/GUI
       # --- /p:OutputPath=./.github/workflows --- -p:Configuration=Release   
       
     - name: download_artifacts #diko mou
