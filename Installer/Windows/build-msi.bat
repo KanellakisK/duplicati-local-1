@@ -1,5 +1,7 @@
 @echo off
 
+rem ta del einai sxolio giati den exoyn dhmiourgithei ta arxeia kai de mporei na ta diagrapsei
+
 rmdir /s /q Duplicati
 rem del /q Duplicati.msi
 rem del /q Duplicati-32bit.msi
@@ -106,14 +108,15 @@ IF EXIST "..\..\..\oem-update-installid.txt" (
 rmdir /s /q obj
 rmdir /s /q bin
 
+rem 3 mhnymata The system cannot find the file specified. einai gia tis grammes ana dyom
 rem copy UpgradeData.wxi UpgradeData.wxi.orig
 rem UpdateVersion.exe Duplicati\Duplicati.GUI.TrayIcon.exe UpgradeData.wxi
 
-msbuild /property:Configuration=Release /property:Platform=x64
-move bin\x64\Release\Duplicati.msi Duplicati.msi
+rem msbuild /property:Configuration=Release /property:Platform=x64
+rem move bin\x64\Release\Duplicati.msi Duplicati.msi
 
 msbuild /property:Configuration=Release /property:Platform=x86
-move bin\x86\Release\Duplicati.msi Duplicati-32bit.msi
+rem move bin\x86\Release\Duplicati.msi Duplicati-32bit.msi
 
 copy UpgradeData.wxi.orig UpgradeData.wxi
 del UpgradeData.wxi.orig
