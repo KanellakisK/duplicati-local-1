@@ -28,14 +28,14 @@ jobs:
     - name: Restore NuGet Packages
       run: nuget restore Duplicati.sln
           
-    - name: Wix
-      run: |
-          curl -OLS https://github.com/wixtoolset/wix3/releases/download/wix3111rtm/wix311.exe
-          .\wix311.exe /install /quiet /norestart
+ #     - name: Wix
+     #   run: |
+      #      curl -OLS https://github.com/wixtoolset/wix3/releases/download/wix3111rtm/wix311.exe
+        #    .\wix311.exe /install /quiet /norestart
           
-    - name: Set path for candle and light
-      run: echo "C:\Program Files (x86)\WiX Toolset v3.11\bin" >> $GITHUB_PATH
-      shell: pwsh
+  #    - name: Set path for candle and light
+  #      run: echo "C:\Program Files (x86)\WiX Toolset v3.11\bin" >> $GITHUB_PATH
+ #     shell: pwsh
 
   #  - name: Install Additional Dependencies
   #    if: matrix.os == 'ubuntu-latest'
