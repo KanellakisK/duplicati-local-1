@@ -22,40 +22,32 @@ jobs:
    # - name: Install NuGet
    #   uses: nuget/setup-nuget@v1.0.5
 
-    - name: Checkout Source
-      uses: actions/checkout@v2.3.4
-
-
+   # - name: Checkout Source
+   #   uses: actions/checkout@v2.3.4
+      
+  #  - name: Restore NuGet Packages
+  #    run: nuget restore Duplicati.sln
+      
+   # - name: Wix
+   #   run: choco install wixtoolset  
+         #|
+         # curl -OLS https://github.com/wixtoolset/wix3/releases/download/wix3111rtm/wix311.exe
+         #  .\wix311.exe /install /quiet /norestart
+    
       
     - name: Build Duplicati (Windows)
       if: matrix.os == 'windows-latest' 
       run: ./Installer/Windows/build-msi.bat ./Installer/Windows/duplicati-2.0.6.3_beta_2021-06-17.zip
       # --- /p:OutputPath=./.github/workflows --- -p:Configuration=Release   
       
+       
+ #   - name: download_artifacts #diko mou
+ #     uses: actions/download-artifact@v2 # 
       
-      
-    - name: Restore NuGet Packages
-      run: nuget restore Duplicati.sln
-      
-    - name: Wix
-      run: choco install wixtoolset  #|
-           # curl -OLS https://github.com/wixtoolset/wix3/releases/download/wix3111rtm/wix311.exe
-          #  .\wix311.exe /install /quiet /norestart
-      
-    - name: download_artifacts #diko mou
-      uses: actions/download-artifact@v2 #
 
-
- #     - name: Wix
-     #   run: |
-      #      curl -OLS https://github.com/wixtoolset/wix3/releases/download/wix3111rtm/wix311.exe
-        #    .\wix311.exe /install /quiet /norestart
           
   #    - name: Set path for candle and light
   #      run: echo "C:\Program Files (x86)\WiX Toolset v3.11\bin" >> $GITHUB_PATH
  #     shell: pwsh
 
-  #  - name: Install Additional Dependencies
-  #    if: matrix.os == 'ubuntu-latest'
-  #    run: sudo apt-get install gtk-sharp2
   
