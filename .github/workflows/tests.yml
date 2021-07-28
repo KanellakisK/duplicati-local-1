@@ -29,9 +29,9 @@ jobs:
       run: nuget restore Duplicati.sln
       
     - name: Wix
-      run: |
-            curl -OLS https://github.com/wixtoolset/wix3/releases/download/wix3111rtm/wix311.exe
-            .\wix311.exe /install /quiet /norestart
+      run: choco install wixtoolset --version 3.11.1 %CHOCO_OPTS% #|
+           # curl -OLS https://github.com/wixtoolset/wix3/releases/download/wix3111rtm/wix311.exe
+          #  .\wix311.exe /install /quiet /norestart
       
     - name: Build Duplicati (Windows)
       if: matrix.os == 'windows-latest' 
