@@ -108,10 +108,10 @@ IF EXIST "..\..\..\oem-update-installid.txt" (
 rmdir /s /q obj
 rmdir /s /q bin
 
-rem 3 mhnymata The system cannot find the file specified. einai gia tis grammes ana dyo
 
-rem copy UpgradeData.wxi UpgradeData.wxi.orig
-rem UpdateVersion.exe Duplicati\Duplicati.GUI.TrayIcon.exe UpgradeData.wxi
+
+copy UpgradeData.wxi UpgradeData.wxi.orig rem  The system cannot find the file specified
+UpdateVersion.exe Duplicati\Duplicati.GUI.TrayIcon.exe UpgradeData.wxi rem 'UpdateVersion.exe' is not recognized as an internal or external command,
 
 msbuild /property:Configuration=Release /property:Platform=x64
 rem move bin\x64\Release\Duplicati.msi Duplicati.msi
@@ -119,8 +119,8 @@ rem move bin\x64\Release\Duplicati.msi Duplicati.msi
 msbuild /property:Configuration=Release /property:Platform=x86 rem error msb1011
 rem move bin\x86\Release\Duplicati.msi Duplicati-32bit.msi
 
-copy UpgradeData.wxi.orig UpgradeData.wxi
-del UpgradeData.wxi.orig
+rem copy UpgradeData.wxi.orig UpgradeData.wxi rem Could Not Find D:\a\duplicati-local\duplicati-local\UpgradeData.wxi.orig
+rem del UpgradeData.wxi.orig                  rem Could Not Find D:\a\duplicati-local\duplicati-local\UpgradeData.wxi.orig
 
 rmdir /s /q Duplicati
 
