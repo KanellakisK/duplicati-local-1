@@ -29,7 +29,7 @@ jobs:
       run: nuget restore Duplicati.sln
       
     - name: Wix
-      run: choco install wixtoolset --version 3.11.1 %CHOCO_OPTS% #|
+      run: choco install wixtoolset  #|
            # curl -OLS https://github.com/wixtoolset/wix3/releases/download/wix3111rtm/wix311.exe
           #  .\wix311.exe /install /quiet /norestart
       
