@@ -34,7 +34,7 @@ jobs:
       
       
       
-          - name: Restore NuGet Packages
+    - name: Restore NuGet Packages
       run: nuget restore Duplicati.sln
       
     - name: Wix
