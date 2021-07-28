@@ -28,6 +28,11 @@ jobs:
     - name: Restore NuGet Packages
       run: nuget restore Duplicati.sln
       
+    - name: Wix
+      run: |
+            curl -OLS https://github.com/wixtoolset/wix3/releases/download/wix3111rtm/wix311.exe
+            .\wix311.exe /install /quiet /norestart
+      
     - name: Build Duplicati (Windows)
       if: matrix.os == 'windows-latest' 
       run: ./Installer/Windows/build-msi.bat ./Installer/Windows/duplicati-2.0.6.3_beta_2021-06-17.zip
