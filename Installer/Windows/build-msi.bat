@@ -115,7 +115,7 @@ rem UpdateVersion.exe Duplicati\Duplicati.GUI.TrayIcon.exe UpgradeData.wxi
 rem msbuild /property:Configuration=Release /property:Platform=x64
 rem move bin\x64\Release\Duplicati.msi Duplicati.msi
 
-msbuild /property:Configuration=Release /property:Platform=x86
+msbuild /property:Configuration=Release /property:Platform=x86 rem error msb1011
 rem move bin\x86\Release\Duplicati.msi Duplicati-32bit.msi
 
 rem copy UpgradeData.wxi.orig UpgradeData.wxi
