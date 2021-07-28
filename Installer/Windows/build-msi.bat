@@ -1,8 +1,8 @@
 @echo off
 
-rmdir /s /q Duplicati
-del /q Duplicati.msi
-del /q Duplicati-32bit.msi
+rmdir /s /q Duplicati 
+del /q Duplicati.msi  rem Could Not Find D:\a\duplicati-local\duplicati-local\Duplicati.msi
+del /q Duplicati-32bit.msi rem den exoun dhmiourgithei ara de mporei na ta diagrapsei
 
 IF NOT EXIST "%1" (
 	echo File not found, please supply a zip file with the build as the first argument
