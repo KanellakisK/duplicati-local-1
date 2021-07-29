@@ -106,8 +106,8 @@ echo ---****---****ΒΓΗΚΕ ΑΠΟ ΤΗΝ ΤΕΛΕΥΤΑΙΑ IF KAI ΘΑ ΚΑ�
 rmdir /s /q obj      rem The system cannot find the file specified
 rmdir /s /q bin      rem The system cannot find the file specified
 
-echo ---****---****EKANE rmdir ,ΘΑ ΧΤΥΠΗΣΕΙ ΤΟ copy Upgradedata, oπου μπορω βαζω Path---****---****
-copy "Installer/Windows/UpgradeData.wxi"  UpgradeData.wxi.orig     rem  The system cannot find the file specified
+echo ---****---****ΣΥΝΕΧΙΖΕΙ ,ΔΕ ΜΠΟΡΕΙ ΝΑ ΒΡΕΙ ΤΟ  UpgradeData.wxi.orig, αν βαλω path μονο στο UpgradeData.wxi ειναι invalid syntax  ---****---****
+copy "Installer/Windows/UpgradeData.wxi" UpgradeData.wxi.orig     rem  The system cannot find the file specified
 
 echo ---****---***MΕ ΠΛΗΡΗ PATH EΓΙΝΕ UPDATE TO UpgradeData.wxi---****---****
 "Installer/Windows/UpdateVersion.exe" "Installer/Windows/Duplicati/Duplicati.GUI.TrayIcon.exe" "Installer/Windows/UpgradeData.wxi" 
@@ -124,7 +124,7 @@ move bin\x86\Release\Duplicati.msi Duplicati-32bit.msi              rem The syst
 
 echo ---****---****ΣΥΝΕΧΙΖΕΙ,ΘΑ ΧΤΥΠΗΣΕΙ ΔΥΟ ΦΟΡΕΣ ΤΟ UpgradeData.wxi.orig, ΔΕ ΤΟ ΒΡΙΣΚΕΙ ΚΑΙ ΔΕ ΜΠΟΡΕΙ ΝΑ ΚΑΝΕΙ copy,del---****---****
 copy UpgradeData.wxi.orig "Installer/Windows/UpgradeData.wxi"  rem Could Not Find D:\a\duplicati-local\duplicati-local\UpgradeData.wxi.orig
-del UpgradeData.wxi.orig                   rem Could Not Find D:\a\duplicati-local\duplicati-local\UpgradeData.wxi.orig
+del UpgradeData.wxi.orig                                       rem Could Not Find D:\a\duplicati-local\duplicati-local\UpgradeData.wxi.orig
 
 rmdir /s /q Duplicati
 
