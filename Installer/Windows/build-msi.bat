@@ -110,7 +110,7 @@ rmdir /s /q bin      rem The system cannot find the file specified
 
 echo ---****---****ΣΥΝΕΧΙΖΕΙ ,ΔΕ ΜΠΟΡΕΙ ΝΑ ΒΡΕΙ ΤΟ  UpgradeData.wxi.orig, αν βαλω path μονο στο UpgradeData.wxi ειναι invalid syntax  ---****---****
 
-copy "Installer\Windows\UpgradeData.wxi" UpgradeData.wxi.orig     rem  The system cannot find the file specified
+copy UpgradeData.wxi UpgradeData.wxi.orig     rem  The system cannot find the file specified
 
 echo ---****---***MΕ ΠΛΗΡΗ PATHS EΓΙΝΕ UPDATE TO UpgradeData.wxi---****---****
 
