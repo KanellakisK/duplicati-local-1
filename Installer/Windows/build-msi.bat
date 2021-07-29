@@ -109,8 +109,9 @@ rmdir /s /q bin      rem The system cannot find the file specified
 echo ---****---****EKANE rmdir ,ΘΑ ΧΤΥΠΗΣΕΙ ΤΟ copy Upgradedata---****---****
 copy UpgradeData.wxi UpgradeData.wxi.orig     rem  The system cannot find the file specified
 
-echo ---****---***ΣΥΝΕΧΙΖΕΙ ΚΑΙ ΤΩΡΑ ΘΑ ΧΤΥΠΗΣΕΙ ΤΟ UpdateVersion.exe---****---****
-UpdateVersion.exe Duplicati\Duplicati.GUI.TrayIcon.exe UpgradeData.wxi     rem 'UpdateVersion.exe' is not recognized as an internal or external command, operable program or batch file.
+echo ---****---***ΣΥΝΕΧΙΖΕΙ ΚΑΙ ΤΩΡΑ ΘΑ ΧΤΥΠΗΣΕΙ ΤΟ UpdateVersion.exe, τωρα δοκιμαζω να δωσω τα πληρη path---****---****
+Installer/Windows/UpdateVersion.exe Installer/Windows/Duplicati/Duplicati.GUI.TrayIcon.exe Installer/Windows/UpgradeData.wxi     rem 'UpdateVersion.exe' is not recognized as an internal or external command, operable program or batch file.
+
 
 echo ---****---****ΣΥΝΕΧΙΖΕΙ,ΘΑ ΧΤΥΠΗΣΕΙ ΤΟ msbuild x64, ΔΕΝ ΕΧΕΙ ΟΡΙΣΜΑ--****---****
 msbuild /property:Configuration=Release /property:Platform=x64    rem error MSB1011: Specify which project or solution file to use because this folder contains more than one project or solution file.
