@@ -1,0 +1,8 @@
+C:\Users\e.labrou\Desktop\duplicati - Αντιγραφή\Installer\Windows\bin\x86\Release\Duplicati.msi
+C:\Users\e.labrou\Desktop\duplicati - Αντιγραφή\Installer\Windows\bin\x86\Release\Duplicati.wixpdb
+obj\x86\Release\Duplicati.wixobj
+obj\x86\Release\binfiles.wixobj
+obj\x86\Release\Shortcuts.wixobj
+obj\x86\Release\WixInstaller.wixproj.BindContentsFileListnull.txt
+obj\x86\Release\WixInstaller.wixproj.BindOutputsFileListnull.txt
+obj\x86\Release\WixInstaller.wixproj.BindBuiltOutputsFileListnull.txt

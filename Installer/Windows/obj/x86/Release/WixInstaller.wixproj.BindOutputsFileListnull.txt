@@ -1,0 +1,2 @@
+C:\Users\e.labrou\Desktop\duplicati - Αντιγραφή\Installer\Windows\bin\x86\Release\Duplicati.msi
+C:\Users\e.labrou\Desktop\duplicati - Αντιγραφή\Installer\Windows\bin\x86\Release\Duplicati.wixpdb
