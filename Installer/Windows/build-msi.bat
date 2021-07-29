@@ -1,8 +1,8 @@
 @echo off
 
 rmdir /s /q Duplicati 
-del /q Duplicati.msi  rem Could Not Find D:\a\duplicati-local\duplicati-local\Duplicati.msi
-del /q Duplicati-32bit.msi rem den exoun dhmiourgithei ara de mporei na ta diagrapsei
+del /q Duplicati.msi         rem Could Not Find D:\a\duplicati-local\duplicati-local\Duplicati.msi
+del /q Duplicati-32bit.msi   rem δεν εχουν δημιουργηθει τα αρχεια αρα δε μπορει να τα διαγραψει
 
 IF NOT EXIST "%1" (
 	echo File not found, please supply a zip file with the build as the first argument
@@ -17,7 +17,7 @@ IF EXIST "..\oem" (
 	echo Installing OEM files
 	xcopy ..\oem\* Duplicati\webroot\oem /e /s /y /i
 )
-echo ---****---****MPAINEI STIS IF---****---****
+echo ---****---****ΜΠΑΙΝΕΙ ΣΤΙΣ IF---****---****
 IF EXIST "..\..\oem" (
 	echo Installing OEM files
 	xcopy ..\..\oem\* Duplicati\webroot\ /e /s /y /i
@@ -97,33 +97,32 @@ IF EXIST "..\..\oem-update-installid.txt" (
 	echo Installing OEM override file
 	xcopy ..\..\oem-update-installid.txt Duplicati /e /s /y /i
 )
-echo ---****---****PAEI STHN TELEUTAIA IF---****---****
+
 IF EXIST "..\..\..\oem-update-installid.txt" (
 	echo Installing OEM override file
 	xcopy ..\..\..\oem-update-installid.txt Duplicati /e /s /y /i
 )
-echo ---****---****VGHKE APO THN TELEUTAIA IF KAI THA KANEI rmdir obj kai bin---****---****
-rmdir /s /q obj
-rmdir /s /q bin
+echo ---****---****ΒΓΗΚΕ ΑΠΟ ΤΗΝ ΤΕΛΕΥΤΑΙΑ IF KAI ΘΑ ΚΑΝΕΙ rmdir obj, rmdir bin---****---****
+rmdir /s /q obj      rem The system cannot find the file specified
+rmdir /s /q bin      rem The system cannot find the file specified
 
-echo ---****---****EKANE rmdir obj kai bin,THA XTYPHSEI TO copy Upgradedata---****---****
-copy UpgradeData.wxi UpgradeData.wxi.orig                              rem  The system cannot find the file specified
+echo ---****---****EKANE rmdir ,ΘΑ ΧΤΥΠΗΣΕΙ ΤΟ copy Upgradedata---****---****
+copy UpgradeData.wxi UpgradeData.wxi.orig     rem  The system cannot find the file specified
 
-echo ---****---****SYNEXIZEI KAI TWRA THA XTYPHSEI TO UpdateVersion.exe---****---****
-UpdateVersion.exe Duplicati\Duplicati.GUI.TrayIcon.exe UpgradeData.wxi rem 'UpdateVersion.exe' is not recognized as an internal or external command,
+echo ---****---***ΣΥΝΕΧΙΖΕΙ ΚΑΙ ΤΩΡΑ ΘΑ ΧΤΥΠΗΣΕΙ ΤΟ UpdateVersion.exe---****---****
+UpdateVersion.exe Duplicati\Duplicati.GUI.TrayIcon.exe UpgradeData.wxi     rem 'UpdateVersion.exe' is not recognized as an internal or external command, operable program or batch file.
 
+echo ---****---****ΣΥΝΕΧΙΖΕΙ,ΘΑ ΧΤΥΠΗΣΕΙ ΤΟ msbuild x64, ΔΕΝ ΕΧΕΙ ΟΡΙΣΜΑ--****---****
+msbuild /property:Configuration=Release /property:Platform=x64    rem error MSB1011: Specify which project or solution file to use because this folder contains more than one project or solution file.
 
-echo ---****---****SYNEXIZEI,THA XTYPHSEI TO msbuild x64 DEN EXEI ORISMA ARXEIO---****---****
-msbuild /property:Configuration=Release /property:Platform=x64
+echo ---****---****ΣΥΝΕΧΙΖΕΙ, ΔΕ ΒΡΙΣΚΕΙ ΤΟ Duplicati msi, ΔΕ ΜΠΟΡΕΙ ΝΑ ΚΑΝΕΙ move---****---****
+move bin\x64\Release\Duplicati.msi Duplicati.msi    rem The system cannot find the path specified.
 
-echo ---****---****SYNEXIZEI,ISWS NA MH VREI TO Duplicati msi, DE MPOREI NA KANEI move---****---****
-move bin\x64\Release\Duplicati.msi Duplicati.msi
+echo ---****---****ΣΥΝΕΧΙΖΕΙ,ΙΔΙΑ ERROR ΜΕ ΠΡΙΝ ΓΙΑ msbuild x86, Duplicati.msi ---****---****
+msbuild /property:Configuration=Release /property:Platform=x86      rem MSBUILD : error MSB1008: Only one project can be specified
+move bin\x86\Release\Duplicati.msi Duplicati-32bit.msi              rem The system cannot find the path specified.
 
-echo ---****---****SYNEXIZEI,IDIA ERROR ME PRIN GIA msbuild x86,Duplicati.msi---****---****
-msbuild /property:Configuration=Release /property:Platform=x86  rem MSBUILD : error MSB1008: Only one project can be specified
-move bin\x86\Release\Duplicati.msi Duplicati-32bit.msi
-
-echo ---****---****SYNEXIZEI,THA XTYPHSEI DYO FORES TO UpgradeData.wxi.orig, DE TO VRISKEI KAI DE MPOREI NA KANEI copy,del---****---****
+echo ---****---****ΣΥΝΕΧΙΖΕΙ,ΘΑ ΧΤΥΠΗΣΕΙ ΔΥΟ ΦΟΡΕΣ ΤΟ UpgradeData.wxi.orig, ΔΕ ΤΟ ΒΡΙΣΚΕΙ ΚΑΙ ΔΕ ΜΠΟΡΕΙ ΝΑ ΚΑΝΕΙ copy,del---****---****
 copy UpgradeData.wxi.orig UpgradeData.wxi  rem Could Not Find D:\a\duplicati-local\duplicati-local\UpgradeData.wxi.orig
 del UpgradeData.wxi.orig                   rem Could Not Find D:\a\duplicati-local\duplicati-local\UpgradeData.wxi.orig
 
