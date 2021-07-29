@@ -103,7 +103,7 @@ IF EXIST "..\..\..\oem-update-installid.txt" (
 	xcopy ..\..\..\oem-update-installid.txt Duplicati /e /s /y /i
 )
 
-echo ---****---****ΒΓΗΚΕ ΑΠΟ ΤΗΝ ΤΕΛΕΥΤΑΙΑ IF KAI ΘΑ ΚΑΝΕΙ rndir obj,bin---****---****
+echo ---****---****ΒΓΗΚΕ ΑΠΟ ΤΗΝ ΤΕΛΕΥΤΑΙΑ IF, ΔΕ ΒΡΙΣΚΕΙ ΤΑ obj,bin ΓΙΑ ΝΑ ΚΑΝΕΙ rmdir****---****
 
 rmdir /s /q obj      rem The system cannot find the file specified
 rmdir /s /q bin      rem The system cannot find the file specified
