@@ -106,8 +106,8 @@ IF EXIST "..\..\..\oem-update-installid.txt" (
 
 echo ---****---****ΒΓΗΚΕ ΑΠΟ ΤΗΝ ΤΕΛΕΥΤΑΙΑ IF, ΔΕ ΒΡΙΣΚΕΙ ΤΑ obj,bin ΓΙΑ ΝΑ ΚΑΝΕΙ rmdir****---****
 
-rmdir /s /q obj      rem The system cannot find the file specified
-rmdir /s /q bin      rem The system cannot find the file specified
+rmdir /s /q "Installer/Windows/obj"      rem The system cannot find the file specified
+rmdir /s /q "Installer/Windows/bin"      rem The system cannot find the file specified
 
 echo ---****---****ΣΥΝΕΧΙΖΕΙ ,ΔΕ ΜΠΟΡΕΙ ΝΑ ΒΡΕΙ ΤΟ  UpgradeData.wxi.orig, αν βαλω path μονο στο UpgradeData.wxi ειναι invalid syntax  ---****---****
 
