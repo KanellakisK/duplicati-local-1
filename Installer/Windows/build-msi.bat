@@ -107,9 +107,9 @@ rmdir /s /q obj      rem The system cannot find the file specified
 rmdir /s /q bin      rem The system cannot find the file specified
 
 echo ---****---****ΣΥΝΕΧΙΖΕΙ ,ΔΕ ΜΠΟΡΕΙ ΝΑ ΒΡΕΙ ΤΟ  UpgradeData.wxi.orig, αν βαλω path μονο στο UpgradeData.wxi ειναι invalid syntax  ---****---****
-copy Installer/Windows/UpgradeData.wxi UpgradeData.wxi.orig     rem  The system cannot find the file specified
+copy UpgradeData.wxi UpgradeData.wxi.orig     rem  The system cannot find the file specified
 
-echo ---****---***MΕ ΠΛΗΡΗ PATH EΓΙΝΕ UPDATE TO UpgradeData.wxi---****---****
+echo ---****---***MΕ ΠΛΗΡΗ PATHS EΓΙΝΕ UPDATE TO UpgradeData.wxi---****---****
 "Installer/Windows/UpdateVersion.exe" "Installer/Windows/Duplicati/Duplicati.GUI.TrayIcon.exe" "Installer/Windows/UpgradeData.wxi" 
 
 echo ---****---****ΣΥΝΕΧΙΖΕΙ,ΘΑ ΧΤΥΠΗΣΕΙ ΤΟ msbuild x64, ΔΕΝ ΕΧΕΙ ΟΡΙΣΜΑ--****---****
