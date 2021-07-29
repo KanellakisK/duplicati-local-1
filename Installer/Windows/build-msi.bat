@@ -107,7 +107,7 @@ rmdir /s /q obj
 rmdir /s /q bin
 
 copy UpgradeData.wxi UpgradeData.wxi.orig                              rem  The system cannot find the file specified
-./Installer/Windows/Duplicati/UpdateVersion.exe Duplicati\Duplicati.GUI.TrayIcon.exe UpgradeData.wxi rem 'UpdateVersion.exe' is not recognized as an internal or external command,
+"duplicati-local/Installer/Windows/Duplicati/UpdateVersion.exe" Duplicati\Duplicati.GUI.TrayIcon.exe UpgradeData.wxi rem 'UpdateVersion.exe' is not recognized as an internal or external command,
 
 msbuild /property:Configuration=Release /property:Platform=x64
 move bin\x64\Release\Duplicati.msi Duplicati.msi
