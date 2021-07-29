@@ -1,8 +1,8 @@
 @echo off
 
 rmdir /s /q Duplicati 
-del /q Duplicati.msi         rem Could Not Find D:\a\duplicati-local\duplicati-local\Duplicati.msi
-del /q Duplicati-32bit.msi   rem δεν εχουν δημιουργηθει τα αρχεια αρα δε μπορει να τα διαγραψει
+del /q Installer/Windows/Duplicati.msi    rem Could Not Find D:\a\duplicati-local\duplicati-local\Duplicati.msi
+del /q Installer/Windows/Duplicati-32bit.msi   rem δεν εχουν δημιουργηθει τα αρχεια αρα δε μπορει να τα διαγραψει
 
 IF NOT EXIST "%1" (
 	echo File not found, please supply a zip file with the build as the first argument
