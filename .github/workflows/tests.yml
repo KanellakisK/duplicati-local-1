@@ -8,15 +8,12 @@ env:
 jobs:
   unit_tests:
     name: Build
-    runs-on: ${{ matrix.os }}
+    runs-on: windows-latest
     strategy:
       fail-fast: false
-      matrix:
-        os: [ windows-latest] #ubuntu-latest, 
 
     steps:
     - name: Add msbuild to PATH (Windows)
-      if: matrix.os == 'windows-latest'
       uses: microsoft/setup-msbuild@v1.0.2
 
     - name: Install NuGet
@@ -36,7 +33,6 @@ jobs:
     
       
     - name: Build Duplicati (Windows)
-      if: matrix.os == 'windows-latest' 
       run:  msbuild -p:Configuration=Release Duplicati.sln
 #./Installer/Windows/build-msi.bat ./Installer/Windows/duplicati-2.0.6.3_beta_2021-06-17.zip
       # --- /p:OutputPath=./.github/workflows --- -p:Configuration=Release   
