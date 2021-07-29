@@ -102,7 +102,7 @@ IF EXIST "..\..\..\oem-update-installid.txt" (
 	echo Installing OEM override file
 	xcopy ..\..\..\oem-update-installid.txt Duplicati /e /s /y /i
 )
-echo ---****---****ΒΓΗΚΕ ΑΠΟ ΤΗΝ ΤΕΛΕΥΤΑΙΑ IF KAI ΘΑ ΚΑΝΕΙ rmdir obj, rmdir bin---****---****
+echo ---****---****ΒΓΗΚΕ ΑΠΟ ΤΗΝ ΤΕΛΕΥΤΑΙΑ IF KAI ΘΑ ΚΑΝΕΙ rndir obj,bin---****---****
 rmdir /s /q obj      rem The system cannot find the file specified
 rmdir /s /q bin      rem The system cannot find the file specified
 
