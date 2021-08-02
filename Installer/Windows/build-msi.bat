@@ -1,7 +1,7 @@
 @echo off
 
 rmdir /s /q Duplicati
-del /q %~dpnx1Duplicati.msi
+del /q Duplicati.msi
 del /q Duplicati-32bit.msi
 
 IF NOT EXIST "%1" (
