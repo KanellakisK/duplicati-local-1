@@ -1,8 +1,8 @@
 @echo off
 
 rmdir /s /q Duplicati
-del /q Duplicati.msi
-del /q Duplicati-32bit.msi
+del /q Installer/Windows/Duplicati.msi
+del /q Installer/Windows/Duplicati-32bit.msi
 
 IF NOT EXIST "%1" (
 	echo File not found, please supply a zip file with the build as the first argument
