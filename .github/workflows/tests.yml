@@ -9,9 +9,9 @@ jobs:
   Build:
     name: Build
     runs-on: windows-latest
-    defaults:
-      run:
-        working-directory: ./Installer/Windows
+  #  defaults:
+     # run:
+      #  working-directory: ./Installer/Windows
     strategy:
       fail-fast: false
 
