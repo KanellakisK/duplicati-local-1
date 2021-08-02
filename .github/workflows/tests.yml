@@ -33,8 +33,8 @@ jobs:
     
       
     - name: Build Duplicati (Windows)
-      working-directory: ./Installer\Windows
-      run:  Installer\Windows\build-msi.bat Installer\Windows\duplicati-2.0.6.3_beta_2021-06-17.zip   #msbuild -p:Configuration=Release Duplicati.sln 
+      working-directory: ./Installer/Windows
+      run:  build-msi.bat duplicati-2.0.6.3_beta_2021-06-17.zip   #msbuild -p:Configuration=Release Duplicati.sln 
  
       
 #    - name: Upload math result for job 1
