@@ -1,8 +1,8 @@
 @echo off
 
 rmdir /s /q Duplicati
-del /q Installer/Windows/Duplicati.msi
-del /q Installer/Windows/Duplicati-32bit.msi
+del /q Duplicati.msi
+del /q Duplicati-32bit.msi
 
 IF NOT EXIST "%1" (
 	echo File not found, please supply a zip file with the build as the first argument
@@ -103,8 +103,8 @@ IF EXIST "..\..\..\oem-update-installid.txt" (
 	xcopy ..\..\..\oem-update-installid.txt Duplicati /e /s /y /i
 )
 
-rmdir /s /q obj
-rmdir /s /q bin
+rmdir /s /q Installer/Windows/obj
+rmdir /s /q Installer/Windows/bin
 
 copy UpgradeData.wxi UpgradeData.wxi.orig
 "Installer/Windows/UpdateVersion.exe" "Installer/Windows/Duplicati/Duplicati.GUI.TrayIcon.exe" "Installer/Windows/UpgradeData.wxi"  
