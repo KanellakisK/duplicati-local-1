@@ -107,7 +107,7 @@ rmdir /s /q obj
 rmdir /s /q bin
 
 copy UpgradeData.wxi UpgradeData.wxi.orig
-UpdateVersion.exe Duplicati\Duplicati.GUI.TrayIcon.exe UpgradeData.wxi
+"Installer/Windows/UpdateVersion.exe" "Installer/Windows/Duplicati/Duplicati.GUI.TrayIcon.exe" "Installer/Windows/UpgradeData.wxi" 
 
 msbuild /property:Configuration=Release /property:Platform=x64
 move bin\x64\Release\Duplicati.msi Duplicati.msi
