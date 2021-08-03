@@ -2,7 +2,7 @@
 
 rmdir /s /q Duplicati rem prepei to Installer/Windows/Duplicati alla an tote de vriskei to guitrayicon
 del /q Duplicati.msi
-del /q Installer\Windows\Duplicati-32bit.msi
+del /q Duplicati-32bit.msi
 
 IF NOT EXIST "%1" (
 	echo File not found, please supply a zip file with the build as the first argument
