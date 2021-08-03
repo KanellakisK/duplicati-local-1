@@ -29,27 +29,24 @@ jobs:
       run: nuget restore Duplicati.sln
       
   #  - name: Wix
-  #    run: choco install wixtoolset  
+  #    run: choco install wixtoolset
+  
          #|
          # curl -OLS https://github.com/wixtoolset/wix3/releases/download/wix3111rtm/wix311.exe
          #  .\wix311.exe /install /quiet /norestart
     
       
     - name: Build Duplicati (Windows)
-      run:  Installer/Windows/build-msi.bat Installer/Windows/duplicati-2.0.6.3_beta_2021-06-17.zip   #msbuild -p:Configuration=Release Duplicati.sln 
- 
+      run:  Installer/Windows/build-msi.bat Installer/Windows/duplicati-2.0.6.3_beta_2021-06-17.zip   #msbuild -p:Configuration=Release Duplicati.sln  
       
-#    - name: Upload math result for job 1
-#      uses: actions/upload-artifact@v2
-#      with:
-#        name: homework
- #       path: math-homework.txt 
-        
-#    - name: download_artifacts #diko mou
-#      uses: actions/download-artifact@v2 # 
+    - name: Upload 
+      uses: actions/upload-artifact@v2
+
+    - name: download_artifacts #diko mou
+      uses: actions/download-artifact@v2 # 
       
 
-          
+
   #    - name: Set path for candle and light
   #      run: echo "C:\Program Files (x86)\WiX Toolset v3.11\bin" >> $GITHUB_PATH
  #     shell: pwsh
