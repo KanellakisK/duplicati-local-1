@@ -1,6 +1,6 @@
 @echo off
 
-rmdir /s /q Duplicati
+rmdir /s /q Installer\Windows\Duplicati
 del /q Installer\Windows\Duplicati.msi
 del /q Installer\Windows\Duplicati-32bit.msi
 
@@ -110,15 +110,14 @@ copy UpgradeData.wxi UpgradeData.wxi.orig
 "Installer\Windows\UpdateVersion.exe" "Installer\Windows\Duplicati\Duplicati.GUI.TrayIcon.exe" "Installer\Windows\UpgradeData.wxi"  
 
 msbuild /property:Configuration=Release /property:Platform=x64
-move bin\x64\Release\Duplicati.msi Duplicati.msi
+move Installer\Windows\bin\x64\Release\Duplicati.msi Duplicati.msi
 
 msbuild /property:Configuration=Release /property:Platform=x86
-move bin\x86\Release\Duplicati.msi Duplicati-32bit.msi
-echo copyyyy
+move Installer\Windows\bin\x86\Release\Duplicati.msi Duplicati-32bit.msi
+
 copy UpgradeData.wxi.orig UpgradeData.wxi
-echo dellll
 del UpgradeData.wxi.orig
-echo remmmm
-rmdir /s /q Duplicati
+
+rmdir /s /q Installer\Windows\Duplicati
 
 :EXIT
