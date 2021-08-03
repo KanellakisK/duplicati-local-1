@@ -2,8 +2,8 @@ name: Tests
 
 on: [push, pull_request]
 
-env:
-   build_directory: "./Installer/Windows"  # " Duplicati/GUI/Duplicati.GUI.TrayIcon/bin/Release"  "Installer/Windows"
+#env:
+   #build_directory: "./Installer/Windows"  # " Duplicati/GUI/Duplicati.GUI.TrayIcon/bin/Release"  "Installer/Windows"
 
 jobs:
   Build:
@@ -39,8 +39,11 @@ jobs:
     - name: Build Duplicati (Windows)
       run:  Installer/Windows/build-msi.bat Installer/Windows/duplicati-2.0.6.3_beta_2021-06-17.zip   #msbuild -p:Configuration=Release Duplicati.sln  
       
-    - name: Upload 
-      uses: actions/upload-artifact@v2
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v2.2.4
+      with:
+        name: upload
+        path: Installer/Windows
 
     - name: download_artifacts #diko mou
       uses: actions/download-artifact@v2 # 
