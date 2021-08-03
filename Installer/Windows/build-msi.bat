@@ -1,6 +1,6 @@
 @echo off
 
-rmdir /s /q Duplicati
+rmdir /s /q Duplicati rem prepei to Installer/Windows/Duplicati alla an to diagrapsw de vriskei to guitrayicon
 del /q Installer\Windows\Duplicati.msi
 del /q Installer\Windows\Duplicati-32bit.msi
 
@@ -117,7 +117,7 @@ move Installer\Windows\bin\x86\Release\Duplicati.msi Duplicati-32bit.msi
 
 copy UpgradeData.wxi.orig UpgradeData.wxi
 del UpgradeData.wxi.orig
-
+echo edw
 rmdir /s /q Installer\Windows\Duplicati
 
 :EXIT
