@@ -117,7 +117,7 @@ move Installer\Windows\bin\x86\Release\Duplicati.msi Duplicati-32bit.msi
 
 copy UpgradeData.wxi.orig UpgradeData.wxi
 del UpgradeData.wxi.orig
-echo edw
+
 rmdir /s /q Installer\Windows\Duplicati
 
 :EXIT
