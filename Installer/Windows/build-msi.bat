@@ -2,7 +2,7 @@
 
 rmdir /s /q Duplicati
 del /q Installer\Windows\Duplicati.msi
-del /q Duplicati-32bit.msi
+del /q Installer\Windows\Duplicati-32bit.msi
 
 IF NOT EXIST "%1" (
 	echo File not found, please supply a zip file with the build as the first argument
@@ -114,10 +114,11 @@ move bin\x64\Release\Duplicati.msi Duplicati.msi
 
 msbuild /property:Configuration=Release /property:Platform=x86
 move bin\x86\Release\Duplicati.msi Duplicati-32bit.msi
-
+echo copyyyy
 copy UpgradeData.wxi.orig UpgradeData.wxi
+echo dellll
 del UpgradeData.wxi.orig
-
+echo remmmm
 rmdir /s /q Duplicati
 
 :EXIT
