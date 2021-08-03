@@ -1,7 +1,7 @@
 @echo off
 
 rmdir /s /q Duplicati
-del /q Installer/Windows/Duplicati.msi
+del /q Installer\Windows\Duplicati.msi
 del /q Duplicati-32bit.msi
 
 IF NOT EXIST "%1" (
@@ -102,10 +102,9 @@ IF EXIST "..\..\..\oem-update-installid.txt" (
 	echo Installing OEM override file
 	xcopy ..\..\..\oem-update-installid.txt Duplicati /e /s /y /i
 )
-echo VGHKE
-rmdir /s /q obj
+
+rmdir /s /q Installer\Windows\obj 
 rmdir /s /q Installer\Windows\bin
-echo VGHKE2
 
 copy UpgradeData.wxi UpgradeData.wxi.orig
 "Installer\Windows\UpdateVersion.exe" "Installer\Windows\Duplicati\Duplicati.GUI.TrayIcon.exe" "Installer\Windows\UpgradeData.wxi"  
