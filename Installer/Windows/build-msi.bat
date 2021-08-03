@@ -1,6 +1,6 @@
 @echo off
 
-rmdir /s /q Installer\Windows\Duplicati
+rmdir /s /q Duplicati
 del /q Installer\Windows\Duplicati.msi
 del /q Installer\Windows\Duplicati-32bit.msi
 
