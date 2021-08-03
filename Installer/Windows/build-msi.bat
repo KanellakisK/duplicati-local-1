@@ -102,7 +102,7 @@ IF EXIST "..\..\..\oem-update-installid.txt" (
 	echo Installing OEM override file
 	xcopy ..\..\..\oem-update-installid.txt Duplicati /e /s /y /i
 )
-
+echo VGHKE
 rmdir /s /q Installer\Windows\obj
 rmdir /s /q Installer\Windows\bin
 
