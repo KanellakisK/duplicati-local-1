@@ -1,6 +1,6 @@
 @echo off
 
-rmdir /s /q Duplicati rem prepei to Installer/Windows/Duplicati alla an tote de vriskei to guitrayicon
+rmdir /s /q Duplicati rem prepei to installer/windows/duplicati alla an tote de vriskei to guitrayicon
 del /q Duplicati.msi
 del /q Duplicati-32bit.msi
 
