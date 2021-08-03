@@ -1,8 +1,8 @@
 @echo off
 
-rmdir /s /q Ιnstaller\Windows\Duplicati rem prepei to installer/windows/duplicati alla an tote de vriskei to guitrayicon
-del /q Duplicati.msi
-del /q Duplicati-32bit.msi
+rmdir /s /q Ιnstaller/Windows/Duplicati
+del /q Ιnstaller/Windows/Duplicati.msi
+del /q Ιnstaller/Windows/Duplicati-32bit.msi
 
 IF NOT EXIST "%1" (
 	echo File not found, please supply a zip file with the build as the first argument
