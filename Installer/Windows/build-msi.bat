@@ -1,7 +1,7 @@
 @echo off
 
-rmdir /s /q Duplicati rem prepei to Installer/Windows/Duplicati alla an to diagrapsw de vriskei to guitrayicon
-del /q Installer\Windows\Duplicati.msi
+rmdir /s /q Duplicati rem prepei to Installer/Windows/Duplicati alla an tote de vriskei to guitrayicon
+del /q Duplicati.msi
 del /q Installer\Windows\Duplicati-32bit.msi
 
 IF NOT EXIST "%1" (
