@@ -103,8 +103,9 @@ IF EXIST "..\..\..\oem-update-installid.txt" (
 	xcopy ..\..\..\oem-update-installid.txt Duplicati /e /s /y /i
 )
 echo VGHKE
-rmdir /s /q Installer\Windows\obj
+rmdir /s /q obj
 rmdir /s /q Installer\Windows\bin
+echo VGHKE2
 
 copy UpgradeData.wxi UpgradeData.wxi.orig
 "Installer\Windows\UpdateVersion.exe" "Installer\Windows\Duplicati\Duplicati.GUI.TrayIcon.exe" "Installer\Windows\UpgradeData.wxi"  
