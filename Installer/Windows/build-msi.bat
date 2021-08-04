@@ -1,5 +1,5 @@
 @echo off
-
+echo bat me wix
 rmdir /s /q Duplicati 
 del /q Duplicati.msi
 del /q Duplicati-32bit.msi
