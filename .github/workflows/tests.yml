@@ -41,9 +41,9 @@ jobs:
         
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.2.4
-   #   with:
-    #    name: Download_github_actions #etsi onomazetai to arxeio pou ginetai upload kai tha katevei
-    #    path: Installer/Windows
+      with:
+        name: Download_github_actions #etsi onomazetai to arxeio pou ginetai upload kai tha katevei
+        path: Installer/Windows
 
     - name: download_artifacts #diko mou
       uses: actions/download-artifact@v2 # 
