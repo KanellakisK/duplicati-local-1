@@ -1,0 +1,37 @@
+name: updown
+
+on: [push, pull_request]
+
+#env:
+   #build_directory: "./Installer/Windows"  # " Duplicati/GUI/Duplicati.GUI.TrayIcon/bin/Release"  "Installer/Windows"
+
+jobs:
+  Build:
+    name: Build
+    runs-on: windows-latest
+  #  defaults:
+     # run:
+      #  working-directory: ./Installer/Windows
+    strategy:
+      fail-fast: false
+
+    steps:
+    - name: Add msbuild to PATH (Windows)
+      uses: microsoft/setup-msbuild@v1.0.2
+
+    - name: Checkout Source
+      uses: actions/checkout@v2.3.4
+
+
+    - name: Build Duplicati (Windows)
+      run:   msbuild -help
+        
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v2.2.4
+      with:
+        name: Download_github_actions
+        path: Installer/Windows
+
+    - name: download_artifacts #diko mou
+      uses: actions/download-artifact@v2 # 
+      
