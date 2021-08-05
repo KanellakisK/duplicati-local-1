@@ -18,6 +18,7 @@ jobs:
     steps:
     - name: Add msbuild to PATH (Windows)
       uses: microsoft/setup-msbuild@v1.0.2
+     
 
     - name: Install NuGet
       uses: nuget/setup-nuget@v1.0.5
@@ -37,7 +38,9 @@ jobs:
     
       
     - name: Build Duplicati (Windows)
-      run:   Installer/Windows/build-msi.bat Installer/Windows/duplicati-2.0.6.3_beta_2021-06-17.zip  # msbuild -p:Configuration=Release Duplicati.sln  
+      working-directory: Installer/Windows
+      run:   Installer/Windows/build-msi.bat Installer/Windows/duplicati-2.0.6.3_beta_2021-06-17.zip  # msbuild -p:Configuration=Release Duplicati.sln
+      
         
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.2.4
