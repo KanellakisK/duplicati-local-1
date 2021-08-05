@@ -1,5 +1,5 @@
 @echo off
-echo bat me wix
+
 rmdir /s /q Duplicati 
 del /q Duplicati.msi
 del /q Duplicati-32bit.msi
@@ -107,17 +107,17 @@ rmdir /s /q Installer\Windows\obj
 rmdir /s /q Installer\Windows\bin
 
 copy UpgradeData.wxi UpgradeData.wxi.orig
-"Installer\Windows\UpdateVersion.exe" "Installer\Windows\Duplicati\Duplicati.GUI.TrayIcon.exe" "Installer\Windows\UpgradeData.wxi"  
+UpdateVersion.exe Duplicati.GUI.TrayIcon.exe UpgradeData.wxi  
 
 msbuild /property:Configuration=Release /property:Platform=x64
-move Installer\Windows\bin\x64\Release\Duplicati.msi Duplicati.msi
+move bin\x64\Release\Duplicati.msi Duplicati.msi
 
 msbuild /property:Configuration=Release /property:Platform=x86
-move Installer\Windows\bin\x86\Release\Duplicati.msi Duplicati-32bit.msi
+move bin\x86\Release\Duplicati.msi Duplicati-32bit.msi
 
 copy UpgradeData.wxi.orig UpgradeData.wxi
 del UpgradeData.wxi.orig
 
-rmdir /s /q Installer\Windows\Duplicati
+rmdir /s /q Duplicati
 
 :EXIT
