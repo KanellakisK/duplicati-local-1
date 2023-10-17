@@ -1,0 +1,30 @@
+name: Tests
+
+on: [push, pull_request]
+
+jobs:
+  Build:
+    name: Build
+    runs-on: windows-latest
+    strategy:
+      fail-fast: false
+
+    steps:
+    
+    - name: Checkout Source
+      uses: actions/checkout@v2.3.4
+
+    - name: Build Duplicati (Windows)
+      working-directory: Installer/Windows
+      shell: cmd
+      run: build-msi.bat duplicati-2.0.7.2-2.0.7.2_canary_2023-05-25.zip  # The .zip should be the same version as the file in Installer/Windows   
+        
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v2.2.4
+      with:
+        name: Artifacts
+        path: Installer/Windows #this directory contains the files that will be downloaded
+
+    - name: download_artifacts 
+      uses: actions/download-artifact@v2 
+      
